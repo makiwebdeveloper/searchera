@@ -4,25 +4,28 @@ import { buttonVariants } from "./ui/Button";
 
 export default function Header() {
   return (
-    <header className="my-[38px] px-[64px] w-full absolute z-[10] top-0">
-      <div className="flex justify-between items-center">
+    <header className="my-[38px] w-full absolute z-[10] top-0">
+      <div className="flex container justify-between items-center">
         <a href="/">
-          <img src="/images/logo.png" className="w-[150px] h-[25px]" />
+          <img src="/images/logo.svg" className="w-[150px] h-[25px]" />
         </a>
-        <nav>
+        <nav className="hidden laptop:block">
           <ul className="flex gap-[24px]">
             {navbarLinks.map((item) => (
               <li key={item.path}>
-                <Link to={item.path}>{item.title}</Link>
+                <a href={item.path}>{item.title}</a>
               </li>
             ))}
           </ul>
         </nav>
-        <div className="flex gap-[16px]">
-          <Link className={buttonVariants({ variant: "outline", size: "sm" })}>
+        <div className="gap-[16px] hidden laptop:flex">
+          <Link
+            to="/signin"
+            className={buttonVariants({ variant: "outline", size: "sm" })}
+          >
             Увійти
           </Link>
-          <Link className={buttonVariants({ size: "sm" })}>
+          <Link to="/signup" className={buttonVariants({ size: "sm" })}>
             Створити акаунт
           </Link>
         </div>

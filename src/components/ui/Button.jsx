@@ -1,14 +1,15 @@
 import { cva } from "class-variance-authority";
 import { cn } from "../../lib/cn";
 
-export const buttonVariants = cva("font-medium", {
+export const buttonVariants = cva("font-medium transition", {
   variants: {
     variant: {
-      default: "bg-[#EDEDED] text-black",
+      default: "bg-[#EDEDED] text-black hover:bg-[#FFFFFF]",
       primary: "bg-primary text-black",
       secondary: "bg-black/30 text-white",
       link: "text-white flex items-center gap-[8px]",
-      outline: "bg-transparent text-black border border-black",
+      outline:
+        "bg-transparent text-black border border-black hover:bg-black hover:text-white",
     },
     size: {
       lg: "px-[16px] py-[24px] rounded-[20px]",
@@ -21,9 +22,18 @@ export const buttonVariants = cva("font-medium", {
   },
 });
 
-export default function Button({ children, variant, className }) {
+export default function Button({
+  children,
+  variant,
+  size,
+  className,
+  ...props
+}) {
   return (
-    <button className={cn(buttonVariants({ variant, className }))}>
+    <button
+      {...props}
+      className={cn(buttonVariants({ variant, size, className }))}
+    >
       {children} {variant === "link" && <LinkIcon />}
     </button>
   );
@@ -41,9 +51,9 @@ function LinkIcon() {
       <path
         d="M6 6L18 18M18 18V10M18 18H10"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

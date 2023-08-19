@@ -7,13 +7,6 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    // container: {
-    //   center: true,
-    //   padding: "2rem",
-    //   screens: {
-    //     "2xl": "1400px",
-    //   },
-    // },
     extend: {
       colors: {
         primary: "#33FF00",
@@ -30,7 +23,13 @@ export default {
     },
     backgroundImage: {
       hero: "url('/images/hero/bg.png')",
-      'hero-points': "url('/images/hero/points.png')"
+      'hero-points': "url('/images/hero/points.png')",
+      'testimonials-block': "url('/images/testimonials/block.svg')"
+    },
+    screens: {
+      tablet: '640px',
+      laptop: '1024px',
+      desktop: '1280px'
     }
   },
   plugins: [],

@@ -1,0 +1,7 @@
+export { default as Hero } from './Hero'
+export { default as Trust } from './Trust'
+export { default as About } from './About'
+export { default as Tabs } from './Tabs'
+export { default as Testimonials } from './Testimonials'
+export { default as FAQ } from './FAQ'
+export { default as Contacts } from './Contacts'

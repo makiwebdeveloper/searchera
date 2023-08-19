@@ -2,6 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body { 
   @apply bg-black text-white font-ubuntu leading-tight overflow-x-hidden;
+}
+
+.container {
+  @apply max-w-[1200px] mx-auto px-[30px] tablet:px-[65px] desktop:px-0;
+}
+
+.title {
+  @apply font-rubik text-[32px] tablet:text-[42px];
+}
+
+.subtitle {
+  @apply font-rubik text-[22px] tablet:text-[32px] leading-[41.6px];
+}
+
+.center {
+  @apply flex items-center justify-center;
+}
+
+.circle1 {
+  border-radius: 521.58px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25) inset, 0px 4px 56px 0px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(10px);          
+}
+
+.circle2 {
+  border-radius: 521.58px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25) inset, 0px 4px 56px 0px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(10px);          
+}
+
+.circle3 {
+  border-radius: 521.58px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25) inset, 0px 4px 56px 0px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(10px);          
+}
+
+
+
+
+
+
+
+
+
+.box2 {
+    width: 322px;
+    background-color: #faebd7;
+    height: 229px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    margin: 0 auto;
+}
+
+.flt_svg {
+    visibility: hidden; 
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+
+.flt_parent {
+    filter: url('#flt_tag');
 }
